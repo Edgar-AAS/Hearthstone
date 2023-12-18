@@ -1,0 +1,28 @@
+{
+  "configurations" : [
+    {
+      "id" : "A5132AFA-EFEB-4C42-90DF-08AEFA807632",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:HearthstoneApp.xcodeproj",
+      "identifier" : "D3122CED2B1A243A001AB3CB",
+      "name" : "HearthstoneApp"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:HearthstoneApp.xcodeproj",
+        "identifier" : "D3122D032B1A243C001AB3CB",
+        "name" : "HearthstoneAppTests"
+      }
+    }
+  ],
+  "version" : 1
+}

@@ -9,7 +9,7 @@ import XCTest
 @testable import HearthstoneApp
 
 final class MainCoordinatorTests: XCTestCase {
-    func test_() {
+    func test_start_sets_correct_viewController() {
         let navigationController = UINavigationController()
         let sut = MainCoordinator()
         sut.navigationController = navigationController
@@ -17,7 +17,7 @@ final class MainCoordinatorTests: XCTestCase {
         XCTAssertTrue(navigationController.viewControllers is [LoginViewController])
     }
         
-    func test_3() {
+    func test_pushToSignUp_event_calls_correct_viewController() {
         let navigationController = UINavigationController()
         let sut = MainCoordinator()
         sut.navigationController = navigationController
@@ -25,7 +25,7 @@ final class MainCoordinatorTests: XCTestCase {
         XCTAssertTrue(navigationController.viewControllers is [SignUpViewController])
     }
         
-    func test_1() {
+    func test_pushToHome_event_calls_correct_viewController() {
         let navigationController = UINavigationController()
         let sut = MainCoordinator()
         sut.navigationController = navigationController
@@ -33,7 +33,7 @@ final class MainCoordinatorTests: XCTestCase {
         XCTAssertTrue(navigationController.viewControllers is [HomeViewController])
     }
     
-    func test_2() {
+    func test_pushToCardList_event_calls_correct_viewController() {
         let navigationController = UINavigationController()
         let sut = MainCoordinator()
         sut.navigationController = navigationController

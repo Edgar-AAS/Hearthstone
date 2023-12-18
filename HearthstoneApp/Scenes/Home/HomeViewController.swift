@@ -70,7 +70,7 @@ extension HomeViewController: CardCategorieCellProtocol {
     }
 }
 
-extension HomeViewController: AlertView {
+extension HomeViewController: AlertViewProtocol {
     func showMessage(viewModel: AlertViewModel) {
         
     }

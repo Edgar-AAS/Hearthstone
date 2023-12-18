@@ -9,7 +9,7 @@ import Foundation
 
 class SignInBuilder {
     static func build(coordinator: Coordinator) -> LoginViewController {
-        let authService: Authentication = AuthService()
+        let authService: AuthenticationProtocol = AuthService()
         let loginAccount: LoginAccountProtocol = LoginAccount(authentication: authService)
         let emailValidator: EmailValidatorProtocol = EmailValidator()
         let viewController = LoginViewController()

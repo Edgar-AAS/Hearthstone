@@ -8,7 +8,7 @@
 import Foundation
 @testable import HearthstoneApp
 
-class HttpGetClientSpy: HtttpGetClient {
+class HttpGetClientSpy: HtttpGetClientProtocol {
     private (set) var url: URL?
     private var emit: ((Result<Data?, HttpError>) -> Void)?
     

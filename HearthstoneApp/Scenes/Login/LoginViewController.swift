@@ -39,13 +39,13 @@ class LoginViewController: UIViewController {
     }
 }
 
-extension LoginViewController: LoadingView {
+extension LoginViewController: LoadingViewProtocol {
     func isLoading(viewModel: LoadingViewModel) {
         viewModel.isLoading ? disableView() : enableView()
     }
 }
 
-extension LoginViewController: AlertView {
+extension LoginViewController: AlertViewProtocol {
     func showMessage(viewModel: AlertViewModel) {
         let alert = UIAlertController(title: viewModel.title, message: viewModel.message, preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .default)

@@ -7,10 +7,6 @@
 
 import UIKit
 
-protocol CardCategorieCellProtocol: AnyObject {
-    func categoryDidTapped(path: RequestPath)
-}
-
 class CardCategorieCell: UICollectionViewCell {
     static let reuseIdentifier = String(describing: CardCategorieCell.self)
     private var categoriesModel: CategoryCellDTO?

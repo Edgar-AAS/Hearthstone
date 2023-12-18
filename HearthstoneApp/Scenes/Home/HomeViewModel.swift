@@ -15,15 +15,15 @@ protocol HomeViewModelProtocol {
 }
 
 class HomeViewModel: HomeViewModelProtocol {
-    private let httpGetService: HtttpGetClient
+    private let httpGetService: HtttpGetClientProtocol
     private var cellTypeDataSource = [CategoryCellDataSource]()
     private let coordinator: Coordinator
-    private weak var alertView: AlertView?
+    private weak var alertView: AlertViewProtocol?
     private let url: URL
     
-    init(httpGetService: HtttpGetClient,
+    init(httpGetService: HtttpGetClientProtocol,
          coordinator: Coordinator,
-         alertView: AlertView,
+         alertView: AlertViewProtocol,
          url: URL) {
         
         self.httpGetService = httpGetService

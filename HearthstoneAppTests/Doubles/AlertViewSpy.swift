@@ -8,7 +8,7 @@
 import Foundation
 @testable import HearthstoneApp
 
-class AlertViewSpy: AlertView {
+class AlertViewSpy: AlertViewProtocol {
     var emit: ((AlertViewModel) -> Void)?
     
     func observe(completion: @escaping (AlertViewModel) -> Void) {

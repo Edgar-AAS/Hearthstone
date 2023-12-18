@@ -8,9 +8,9 @@
 import Foundation
 
 class AddAccount: AddAccountProtocol {
-    private let authentication: Authentication
+    private let authentication: AuthenticationProtocol
     
-    init(authentication: Authentication) {
+    init(authentication: AuthenticationProtocol) {
         self.authentication = authentication
     }
     

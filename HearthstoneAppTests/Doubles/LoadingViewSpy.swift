@@ -8,7 +8,7 @@
 import Foundation
 @testable import HearthstoneApp
 
-class LoadingViewSpy: LoadingView {
+class LoadingViewSpy: LoadingViewProtocol {
     private(set) var emit: ((LoadingViewModel) -> Void)?
     
     func observe(completion: @escaping (LoadingViewModel) -> Void) {

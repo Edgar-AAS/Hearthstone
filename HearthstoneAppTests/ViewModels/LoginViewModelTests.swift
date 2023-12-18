@@ -160,11 +160,11 @@ final class LoginViewModelTests: XCTestCase {
 }
 
 extension LoginViewModelTests {
-    func makeSut(alertViewSpy: AlertView = AlertViewSpy(),
+    func makeSut(alertViewSpy: AlertViewProtocol = AlertViewSpy(),
                  loginAccountSpy: LoginAccountProtocol = LoginAccountSpy(),
                  emailValidatorSpy: EmailValidatorSpy = EmailValidatorSpy(),
                  coordinatorspy: Coordinator = MainCoordinatorSpy(),
-                 loadingViewSpy: LoadingView = LoadingViewSpy(), file: StaticString = #filePath, line: UInt = #line) -> LoginViewModel {
+                 loadingViewSpy: LoadingViewProtocol = LoadingViewSpy(), file: StaticString = #filePath, line: UInt = #line) -> LoginViewModel {
         let sut = LoginViewModel(loginAccount: loginAccountSpy,
                                  alertView: alertViewSpy,
                                  emailValidator: emailValidatorSpy,

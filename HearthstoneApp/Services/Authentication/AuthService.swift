@@ -10,8 +10,7 @@ import FirebaseAuth
 import FirebaseFirestore
 
 
-
-class AuthService: Authentication {
+class AuthService: AuthenticationProtocol {
     func loginAccount(with loginRequest: LoginModel, completion: @escaping (Result<Void, Error>) -> Void) {
         if let email = loginRequest.email,
            let password = loginRequest.password {

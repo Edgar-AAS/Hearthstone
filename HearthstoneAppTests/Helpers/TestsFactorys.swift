@@ -12,10 +12,6 @@ func makeUrl() -> URL {
     return URL(string: "any_url.com")!
 }
 
-func makeInvalidData() -> Data {
-    return Data("invalid_data".utf8)
-}
-
 func makeValidData() -> Data {
     let classes = ["any_Class"]
     let races = ["any_Race"]

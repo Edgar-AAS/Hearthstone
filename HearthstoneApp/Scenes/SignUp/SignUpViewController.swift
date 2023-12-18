@@ -43,7 +43,7 @@ class SignUpViewController: UIViewController {
     }
 }
 
-extension SignUpViewController: AlertView {
+extension SignUpViewController: AlertViewProtocol {
     func showMessage(viewModel: AlertViewModel) {
         let alert = UIAlertController(title: viewModel.title, message: viewModel.message, preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .default) { [weak self] _ in

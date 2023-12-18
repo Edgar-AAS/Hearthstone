@@ -32,23 +32,27 @@ class LoginScreen: UIView {
     lazy var emailTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Email"
-        textField.backgroundColor = .secondarySystemBackground
         textField.layer.cornerRadius = 12
+        textField.textColor = .black
         textField.autocorrectionType = .no
         textField.autocapitalizationType = .none
         textField.keyboardType = .emailAddress
-        textField.returnKeyType = .done
-        textField.text = "pirulito@gmail.com"
+        textField.borderStyle = .roundedRect
+        textField.returnKeyType = .next
+        textField.becomeFirstResponder()
         return textField
     }()
     
     lazy var passwordTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Password"
-        textField.backgroundColor = .secondarySystemBackground
         textField.layer.cornerRadius = 12
+        textField.textColor = .black
         textField.isSecureTextEntry = true
-        textField.text = "123456"
+        textField.autocapitalizationType = .none
+        textField.returnKeyType = .done
+        textField.borderStyle = .roundedRect
+        textField.autocorrectionType = .no
         return textField
     }()
     
@@ -107,7 +111,8 @@ extension  LoginScreen: CodeView {
             top: scrollView.topAnchor,
             leading: scrollView.leadingAnchor,
             trailing: scrollView.trailingAnchor,
-            bottom: scrollView.bottomAnchor
+            bottom: scrollView.bottomAnchor,
+            padding: .init(top: 32, left: 0, bottom: 0, right: 0)
         )
         
         containerView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
@@ -135,7 +140,7 @@ extension  LoginScreen: CodeView {
             leading: containerView.leadingAnchor,
             trailing: containerView.trailingAnchor,
             bottom: nil,
-            padding: .init(top: 16, left: 16, bottom: 0, right: 16)
+            padding: .init(top: 8, left: 16, bottom: 0, right: 16)
         )
         
         loginButton.fillConstraints(
@@ -143,7 +148,7 @@ extension  LoginScreen: CodeView {
             leading: containerView.leadingAnchor,
             trailing: containerView.trailingAnchor,
             bottom: containerView.bottomAnchor,
-            padding: .init(top: 16, left: 16, bottom: 16, right: 16),
+            padding: .init(top: 32, left: 16, bottom: 16, right: 16),
             size: .init(width: 0, height: 44)
         )
     }

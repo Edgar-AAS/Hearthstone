@@ -63,7 +63,7 @@ extension CardListViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
-extension CardListViewController: AlertView {
+extension CardListViewController: AlertViewProtocol {
     func showMessage(viewModel: AlertViewModel) {
         self.customView?.alerTitle = viewModel.message
     }

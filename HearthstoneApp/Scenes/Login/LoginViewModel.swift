@@ -7,24 +7,18 @@
 
 import Foundation
 
-
-protocol LoginViewModelProtocol {
-    func signInWith(loginRequest: LoginModel)
-    func routeToSignUp()
-}
-
 class LoginViewModel: LoginViewModelProtocol {
     private let loginAccount: LoginAccountProtocol
-    private weak var alertView: AlertView?
-    private weak var loadingView: LoadingView?
+    private weak var alertView: AlertViewProtocol?
+    private weak var loadingView: LoadingViewProtocol?
     private let emailValidator: EmailValidatorProtocol
     private let coordinator: Coordinator
     
     init(loginAccount: LoginAccountProtocol,
-         alertView: AlertView,
+         alertView: AlertViewProtocol,
          emailValidator: EmailValidatorProtocol,
          coordinator: Coordinator,
-         loadingView: LoadingView)
+         loadingView: LoadingViewProtocol)
     {
         self.loginAccount = loginAccount
         self.alertView = alertView

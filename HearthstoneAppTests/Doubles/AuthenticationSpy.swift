@@ -8,7 +8,7 @@
 import Foundation
 @testable import HearthstoneApp
 
-class AuthenticationSpy: Authentication {
+class AuthenticationSpy: AuthenticationProtocol {
     private (set) var loginModel: LoginModel?
     private (set) var registerUserRequest: RegisterUserRequest?
     

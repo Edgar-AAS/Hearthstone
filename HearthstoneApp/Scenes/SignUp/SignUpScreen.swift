@@ -34,6 +34,7 @@ class SignUpScreen: UIView {
         textField.placeholder = "Username"
         textField.backgroundColor = .secondarySystemBackground
         textField.layer.cornerRadius = 12
+        textField.becomeFirstResponder()
         return textField
     }()
     
@@ -147,7 +148,7 @@ extension SignUpScreen: CodeView {
             leading: containerView.leadingAnchor,
             trailing: containerView.trailingAnchor,
             bottom: containerView.bottomAnchor,
-            padding: .init(top: 16, left: 16, bottom: 16, right: 16),
+            padding: .init(top: 32, left: 16, bottom: 16, right: 16),
             size: .init(width: 0, height: 44)
         )
     }

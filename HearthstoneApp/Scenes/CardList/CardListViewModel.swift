@@ -7,25 +7,18 @@
 
 import Foundation
 
-protocol CardListViewModelProtocol {
-    func fetchCards(completion: @escaping (() -> Void))
-    func getCardDataSourceWith(item: Int) -> CardModel
-    var alertView: AlertView? { get set }
-    var numberOfRows: Int { get }
-}
-
 class CardListViewModel: CardListViewModelProtocol {
     private var cardsDataSource = [CardModel]()
     
     private let path: RequestPath
-    private let httpGetService: HtttpGetClient
+    private let httpGetService: HtttpGetClientProtocol
     
-    init(path: RequestPath, httpGetService: HtttpGetClient) {
+    init(path: RequestPath, httpGetService: HtttpGetClientProtocol) {
         self.path = path
         self.httpGetService = httpGetService
     }
     
-    weak var alertView: AlertView?
+    weak var alertView: AlertViewProtocol?
     
     func getCardDataSourceWith(item: Int) -> CardModel {
         return cardsDataSource[item]

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class RemoteHttpGetService: HtttpGetClient {
+class RemoteHttpGetService: HtttpGetClientProtocol {
     private let urlSession: URLSession
     
     init(urlSession: URLSession = .shared) {
@@ -18,7 +18,6 @@ class RemoteHttpGetService: HtttpGetClient {
         let request = NSMutableURLRequest(url: url,
                                           cachePolicy: .useProtocolCachePolicy,
                                           timeoutInterval: 10.0)
-        
         request.allHTTPHeaderFields = NetworkConstants.Auth.headers
         
         urlSession.dataTask(with: request as URLRequest) { data, response, error in

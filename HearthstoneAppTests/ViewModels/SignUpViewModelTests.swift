@@ -136,7 +136,7 @@ final class SignUpViewModelTests: XCTestCase {
 }
 
 extension SignUpViewModelTests {
-    func makeSut(alertViewSpy: AlertView = AlertViewSpy(),
+    func makeSut(alertViewSpy: AlertViewProtocol = AlertViewSpy(),
                  addAccountSpy:AddAccountProtocol = AddAccountSpy(),
                  emailValidatorSpy: EmailValidatorProtocol = EmailValidatorSpy(),
                  coordinatorSpy: Coordinator = MainCoordinatorSpy(), file: StaticString = #filePath, line: UInt = #line) -> SignUpViewModel

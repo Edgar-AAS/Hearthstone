@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol AddAccountProtocol {
+protocol AddAccountProtocol: AnyObject {
     func signUp(with registerUserRequest: RegisterUserRequest, completion: @escaping (Bool, Error?) -> Void)
 }

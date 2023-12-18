@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol HtttpGetClient: AnyObject {
+protocol HtttpGetClientProtocol: AnyObject {
     func get(with url: URL, completion: @escaping ((Result<Data?, HttpError>) -> Void))
 }

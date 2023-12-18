@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol Authentication {
+protocol AuthenticationProtocol {
     func addAccount(with registerUserRequest: RegisterUserRequest, completion: @escaping (Bool, Error?) -> Void)
     func loginAccount(with loginRequest: LoginModel, completion: @escaping (Result<Void, Error>) -> Void)
 }

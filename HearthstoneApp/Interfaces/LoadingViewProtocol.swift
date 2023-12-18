@@ -7,7 +7,7 @@
 
 import Foundation
 
-public protocol LoadingView: AnyObject {
+public protocol LoadingViewProtocol: AnyObject {
     func isLoading(viewModel: LoadingViewModel)
 }
 

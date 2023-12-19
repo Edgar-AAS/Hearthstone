@@ -52,6 +52,7 @@
 		D38193062B30E3DA00F8B6B7 /* CardCategorieCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38193052B30E3DA00F8B6B7 /* CardCategorieCellProtocol.swift */; };
 		D38193082B30E42B00F8B6B7 /* SignUpViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38193072B30E42B00F8B6B7 /* SignUpViewModelProtocol.swift */; };
 		D381930A2B30F01900F8B6B7 /* LoginViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38193092B30F01900F8B6B7 /* LoginViewModelProtocol.swift */; };
+		D382FAEA2B31EF8300F74DE2 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D382FAE92B31EF8300F74DE2 /* CustomTextField.swift */; };
 		D387E9FB2B1E053100A152D0 /* LoginAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = D387E9FA2B1E053100A152D0 /* LoginAccount.swift */; };
 		D387E9FD2B1E178B00A152D0 /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D387E9FC2B1E178B00A152D0 /* LoginViewModelTests.swift */; };
 		D387EA032B1E39FD00A152D0 /* SignUpBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D387EA022B1E39FD00A152D0 /* SignUpBuilder.swift */; };
@@ -147,6 +148,7 @@
 		D38193052B30E3DA00F8B6B7 /* CardCategorieCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCategorieCellProtocol.swift; sourceTree = "<group>"; };
 		D38193072B30E42B00F8B6B7 /* SignUpViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModelProtocol.swift; sourceTree = "<group>"; };
 		D38193092B30F01900F8B6B7 /* LoginViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelProtocol.swift; sourceTree = "<group>"; };
+		D382FAE92B31EF8300F74DE2 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		D387E9FA2B1E053100A152D0 /* LoginAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAccount.swift; sourceTree = "<group>"; };
 		D387E9FC2B1E178B00A152D0 /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
 		D387EA022B1E39FD00A152D0 /* SignUpBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpBuilder.swift; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 		D3122CF02B1A243A001AB3CB /* HearthstoneApp */ = {
 			isa = PBXGroup;
 			children = (
+				D382FAE82B31EF7300F74DE2 /* Components */,
 				D38193042B30DF4000F8B6B7 /* Commons */,
 				D3DFBE292B1E940200802BE2 /* Coordinator */,
 				D3122D4D2B1A51F0001AB3CB /* Services */,
@@ -418,6 +421,14 @@
 				D3F8E6232B1FEAE8001FBC69 /* Constants.swift */,
 			);
 			path = Commons;
+			sourceTree = "<group>";
+		};
+		D382FAE82B31EF7300F74DE2 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				D382FAE92B31EF8300F74DE2 /* CustomTextField.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		D387E9F92B1E04BF00A152D0 /* UseCases */ = {
@@ -715,6 +726,7 @@
 				D3F8E6162B1FC6DF001FBC69 /* HomeViewController.swift in Sources */,
 				D38193062B30E3DA00F8B6B7 /* CardCategorieCellProtocol.swift in Sources */,
 				D32D20942B2901E70006958F /* CardCollectionViewCell.swift in Sources */,
+				D382FAEA2B31EF8300F74DE2 /* CustomTextField.swift in Sources */,
 				D3122CF22B1A243A001AB3CB /* AppDelegate.swift in Sources */,
 				D3DFBE252B1E6DCB00802BE2 /* LoginAccountProtocol.swift in Sources */,
 				D31470D12B20FFB000F9EF3E /* CardModel.swift in Sources */,

@@ -23,7 +23,6 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         setNavigationTitle(AppNameConstants.categories)
         hideNavigationBackButton()
-        
         customView?.setupCollectionViewProtocols(delegate: self, dataSource: self)
         viewModel?.fetchCardsCategorie { [weak self] in self?.customView?.reloadCollection() }
     }

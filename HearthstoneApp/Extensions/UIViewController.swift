@@ -34,6 +34,20 @@ extension UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: isAnimatig)
     }
     
+    func showAlert(title: String = "",
+                   message: String = "",
+                   actionTitle: String = "OK",
+                   completion: (() -> Void)? = nil) {
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: actionTitle, style: .default) { [weak self] _  in
+            guard self != nil else { return }
+            completion?()
+        }
+        alert.addAction(action)
+        present(alert, animated: true)
+    }
+    
     func hideKeyboardOnTap() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         tapGesture.cancelsTouchesInView = false

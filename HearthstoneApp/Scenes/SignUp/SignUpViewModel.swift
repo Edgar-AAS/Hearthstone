@@ -51,7 +51,7 @@ class SignUpViewModel: SignUpViewModelProtocol {
         } else if userRequest.passwordConfirmation == "" || userRequest.passwordConfirmation == nil {
             return "O campo de Confirmação de senha é obrigatório"
         } else if userRequest.password != userRequest.passwordConfirmation {
-            return "Não foi possível confirmar a senha"
+            return "Não foi possível confirmar senha"
         } else { return nil }
     }
 }

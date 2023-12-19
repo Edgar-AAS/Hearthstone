@@ -17,17 +17,25 @@ class HomeScreen: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    lazy var cardCategorieCollection: UICollectionView = {
+    private lazy var refreshControll: UIRefreshControl = {
+        let refreshControll = UIRefreshControl()
+        refreshControll.addTarget(self, action: #selector(reloadCollection), for: .valueChanged)
+        return refreshControll
+    }()
+    
+    private lazy var cardCategorieCollection: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.register(CardCategorieCell.self, forCellWithReuseIdentifier: CardCategorieCell.reuseIdentifier)
+        collectionView.refreshControl = refreshControll
         return collectionView
     }()
     
-    func reloadCollection() {
+    @objc func reloadCollection() {
         DispatchQueue.main.async {
             self.cardCategorieCollection.reloadData()
+            self.refreshControll.endRefreshing()
         }
     }
     

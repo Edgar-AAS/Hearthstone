@@ -93,7 +93,7 @@ final class SignUpViewModelTests: XCTestCase {
         let userRequest = RegisterUserRequest(username: "any_name", email: "any_email@gmail.com", password: "password1", passwordConfirmation: "password2")
         let exp = expectation(description: "waiting")
         alertViewSpy.observe { alertViewModel in
-            XCTAssertEqual(alertViewModel, AlertViewModel(title: "Falha na validação", message: "Não foi possível confirmar a senha"))
+            XCTAssertEqual(alertViewModel, AlertViewModel(title: "Falha na validação", message: "Não foi possível confirmar senha"))
             exp.fulfill()
         }
         sut.registerUserWith(userRequest: userRequest)

@@ -21,6 +21,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        hideKeyboardOnTap()
         customView?.loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         customView?.goToRegisterButton.addTarget(self, action: #selector(goToRegisterButtonTapped), for: .touchUpInside)
     }
@@ -41,15 +42,13 @@ class LoginViewController: UIViewController {
 
 extension LoginViewController: LoadingViewProtocol {
     func isLoading(viewModel: LoadingViewModel) {
+        customView?.animateLoading(isLoading: viewModel.isLoading)
         viewModel.isLoading ? disableView() : enableView()
     }
 }
 
 extension LoginViewController: AlertViewProtocol {
     func showMessage(viewModel: AlertViewModel) {
-        let alert = UIAlertController(title: viewModel.title, message: viewModel.message, preferredStyle: .alert)
-        let action = UIAlertAction(title: "OK", style: .default)
-        alert.addAction(action)
-        self.present(alert, animated: true)
+        showAlert(title: viewModel.title, message: viewModel.message)
     }
 }

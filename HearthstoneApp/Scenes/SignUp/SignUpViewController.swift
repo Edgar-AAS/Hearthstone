@@ -25,6 +25,8 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        hideKeyboardOnTap()
+        navigationItem.title = "Register"
         customView?.signUpButton.addTarget(self, action: #selector(signUpButtonTapped), for: .touchUpInside)
     }
     
@@ -45,11 +47,8 @@ class SignUpViewController: UIViewController {
 
 extension SignUpViewController: AlertViewProtocol {
     func showMessage(viewModel: AlertViewModel) {
-        let alert = UIAlertController(title: viewModel.title, message: viewModel.message, preferredStyle: .alert)
-        let action = UIAlertAction(title: "OK", style: .default) { [weak self] _ in
+        self.showAlert(message: viewModel.message) { [weak self] in
             self?.goToLogin?()
         }
-        alert.addAction(action)
-        self.present(alert, animated: true)
     }
 }

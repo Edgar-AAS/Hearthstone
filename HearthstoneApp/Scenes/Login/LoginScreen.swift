@@ -29,29 +29,21 @@ class LoginScreen: UIView {
         return view
     }()
     
-    lazy var emailTextField: UITextField = {
-        let textField = UITextField()
-        textField.placeholder = "Email"
-        textField.layer.cornerRadius = 12
-        textField.textColor = .black
+    lazy var emailTextField: CustomTextField = {
+        let textField = CustomTextField(placeholderText: "Email")
         textField.autocorrectionType = .no
         textField.autocapitalizationType = .none
         textField.keyboardType = .emailAddress
-        textField.borderStyle = .roundedRect
         textField.returnKeyType = .next
         textField.becomeFirstResponder()
         return textField
     }()
     
-    lazy var passwordTextField: UITextField = {
-        let textField = UITextField()
-        textField.placeholder = "Password"
-        textField.layer.cornerRadius = 12
-        textField.textColor = .black
+    lazy var passwordTextField: CustomTextField = {
+        let textField = CustomTextField(placeholderText: "Password")
         textField.isSecureTextEntry = true
         textField.autocapitalizationType = .none
         textField.returnKeyType = .done
-        textField.borderStyle = .roundedRect
         textField.autocorrectionType = .no
         return textField
     }()
@@ -80,11 +72,20 @@ class LoginScreen: UIView {
         return button
     }()
     
+    private lazy var activityIndicator: UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView(style: .large)
+        indicator.hidesWhenStopped = true
+        return indicator
+    }()
+    
     private lazy var registerStackView = makeHorizontalStack(with: [UIView(),
                                                                     goToRegisterLabel,
                                                                     goToRegisterButton],
                                                             spacing: 8)
     
+    func animateLoading(isLoading: Bool) {
+        isLoading ? activityIndicator.startAnimating() : activityIndicator.stopAnimating()
+    }
 }
 
 extension  LoginScreen: CodeView {
@@ -95,6 +96,7 @@ extension  LoginScreen: CodeView {
         containerView.addSubview(passwordTextField)
         containerView.addSubview(registerStackView)
         containerView.addSubview(loginButton)
+        containerView.addSubview(activityIndicator)
     }
     
     func setupConstrains() {
@@ -147,13 +149,24 @@ extension  LoginScreen: CodeView {
             top: registerStackView.bottomAnchor,
             leading: containerView.leadingAnchor,
             trailing: containerView.trailingAnchor,
-            bottom: containerView.bottomAnchor,
+            bottom: nil,
             padding: .init(top: 32, left: 16, bottom: 16, right: 16),
             size: .init(width: 0, height: 44)
         )
+        
+        activityIndicator.fillConstraints(
+            top: loginButton.bottomAnchor,
+            leading: nil,
+            trailing: nil,
+            bottom: containerView.bottomAnchor,
+            padding: .init(top: 64, left: 0, bottom: 0, right: 0)
+        )
+        activityIndicator.centerXAnchor.constraint(equalTo: loginButton.centerXAnchor).isActive = true
     }
     
     func setupAdditionalConfiguration() {
         backgroundColor = .white
+        emailTextField.setupLeftImageView(image: UIImage(systemName: "envelope")!, with: .lightGray)
+        passwordTextField.setupLeftImageView(image: UIImage(systemName: "lock")!, with: .lightGray)
     }
 }

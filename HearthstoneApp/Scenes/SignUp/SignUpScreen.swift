@@ -29,41 +29,31 @@ class SignUpScreen: UIView {
         return view
     }()
     
-    lazy var usernameTextField: UITextField = {
-        let textField = UITextField()
-        textField.placeholder = "Username"
-        textField.backgroundColor = .secondarySystemBackground
-        textField.layer.cornerRadius = 12
+    lazy var usernameTextField: CustomTextField = {
+        let textField = CustomTextField(placeholderText: "Username")
+        textField.returnKeyType = .next
         textField.becomeFirstResponder()
         return textField
     }()
     
-    lazy var emailTextField: UITextField = {
-        let textField = UITextField()
-        textField.placeholder = "E-mail"
-        textField.backgroundColor = .secondarySystemBackground
-        textField.layer.cornerRadius = 12
+    lazy var emailTextField: CustomTextField = {
+        let textField = CustomTextField(placeholderText: "Email")
         textField.autocorrectionType = .no
         textField.autocapitalizationType = .none
         textField.keyboardType = .emailAddress
-        textField.returnKeyType = .done
+        textField.returnKeyType = .next
         return textField
     }()
     
-    lazy var passwordTextField: UITextField = {
-        let textField = UITextField()
-        textField.placeholder = "Password"
-        textField.backgroundColor = .secondarySystemBackground
-        textField.layer.cornerRadius = 12
+    lazy var passwordTextField: CustomTextField = {
+        let textField = CustomTextField(placeholderText: "Password")
         textField.isSecureTextEntry = true
+        textField.returnKeyType = .next
         return textField
     }()
     
-    lazy var confirmPasswordTextField: UITextField = {
-        let textField = UITextField()
-        textField.placeholder = "Confirm Password"
-        textField.backgroundColor = .secondarySystemBackground
-        textField.layer.cornerRadius = 12
+    lazy var confirmPasswordTextField: CustomTextField = {
+        let textField = CustomTextField(placeholderText: "Confirm Password")
         textField.isSecureTextEntry = true
         return textField
     }()
@@ -155,5 +145,9 @@ extension SignUpScreen: CodeView {
     
     func setupAdditionalConfiguration() {
         backgroundColor = .white
+        usernameTextField.setupLeftImageView(image: UIImage(systemName: "person")!, with: .lightGray)
+        emailTextField.setupLeftImageView(image: UIImage(systemName: "envelope")!, with: .lightGray)
+        passwordTextField.setupLeftImageView(image: UIImage(systemName: "lock")!, with: .lightGray)
+        confirmPasswordTextField.setupLeftImageView(image: UIImage(systemName: "lock")!, with: .lightGray)
     }
 }

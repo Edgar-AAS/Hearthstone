@@ -71,6 +71,6 @@ extension HomeViewController: CardCategorieCellProtocol {
 
 extension HomeViewController: AlertViewProtocol {
     func showMessage(viewModel: AlertViewModel) {
-        
+        print(viewModel.message)
     }
 }

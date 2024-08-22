@@ -3,7 +3,7 @@
 
 
 # Hearthstone
-Aplicativo de listagem de cartas de acordo de acordo com suas categorias.
+Aplicativo de listagem de cartas de acordo com suas categorias.
 
 # Descrição do Projeto
 Projeto de estudo, focado na implementação de testes de unidade e integração com FirebaseAuth para autenticação e criação de usuário.
